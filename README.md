@@ -1,4 +1,3 @@
 # color-game
-[Easymode.jpg]
-(./Pictures/Easymode.jpg)
-[Hardmode.jpg]
+![Easymode.jpg](Easymode.jpg)
+![Hardmode.jpg](Hardmode.jpg)
