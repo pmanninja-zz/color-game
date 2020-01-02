@@ -1,5 +1,7 @@
 body {
     background-color: #232323;
+    margin: 0;
+    font-family: fantasy;
 }
 
 .square {
@@ -8,19 +10,61 @@ body {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 15%;
+    transition: background 0.5s;
 }
 
 #container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 h1 {
     color: seashell;
+    text-align: center;
+    line-height: 1.1;
+    padding-top: 20px 0;
+    padding-bottom: 20px 0;
+    background-color: steelblue;
+    font-weight: normal;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 #stripe {
     background-color: seashell;
     height: 30px;
     text-align: center;
+}
+
+.selected {
+    color: seashell;
+    background-color: steelblue;
+}
+
+#colorDis {
+    font-size: 200%;
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.34s;
+    outline: none;
+}
+
+button:hover {
+    color: seashell;
+    background-color: steelblue;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
 }

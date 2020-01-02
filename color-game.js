@@ -1,21 +1,82 @@
-var colors = generateRandomColors(6);
+var num_square = 6
+var colors = generateRandomColors(num_square);
 var h1 = document.querySelector("h1");
 var squares = document.querySelectorAll(".square");
 var pick_color = pickColor();
 var colorDis = document.getElementById("colorDis");
 var messageDis = document.querySelector("#message");
 var reset_button = document.querySelector("#reset")
+var mode_button = document.querySelectorAll(".mode");
 
-reset_button.addEventListener("click", function() {
-    colors = generateRandomColors(6);
+for (var i = 0; i < mode_button.length; i++) {
+    mode_button[i].addEventListener("click", function() {
+        mode_button[0].classList.remove("selected");
+        mode_button[1].classList.remove("selected");
+        this.classList.add("selected");
+        this.textContent === "Easy" ? num_square = 3 : num_square = 6;
+        reset();
+    });
+}
+
+function reset() {
+    colors = generateRandomColors(num_square);
     pick_color = pickColor();
     colorDis.textContent = pick_color;
+    messageDis.textContent = "";
+    reset_button.textContent = "New Colors";
+    for (var i = 0; i < squares.length; i++) {
+        //assign colors
+        if (colors[i]) {
+            squares[i].style.display = "block";
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].style.display = "none";
+        }
+    }
+    h1.style.backgroundColor = "steelblue";
+}
+
+// easy_button.addEventListener("click", function() {
+//     easy_button.classList.add("selected");
+//     hard_button.classList.remove("selected");
+//     num_square = 3;
+//     colors = generateRandomColors(num_square);
+//     pick_color = pickColor();
+//     colorDis.textContent = pick_color;
+//     for (var i = 0; i < squares.length; i++) {
+//         if (colors[i]) {
+//             squares[i].style.backgroundColor = colors[i];
+//         } else {
+//             squares[i].style.display = "none";
+//         }
+//     }
+// });
+
+// hard_button.addEventListener("click", function() {
+//     easy_button.classList.remove("selected");
+//     hard_button.classList.add("selected");
+//     num_square = 6;
+//     colors = generateRandomColors(num_square);
+//     pick_color = pickColor();
+//     colorDis.textContent = pick_color;
+//     for (var i = 0; i < squares.length; i++) {
+//         squares[i].style.backgroundColor = colors[i];
+//         squares[i].style.display = "block";
+//     }
+// });
+
+reset_button.addEventListener("click", function() {
+    colors = generateRandomColors(num_square);
+    pick_color = pickColor();
+    colorDis.textContent = pick_color;
+    messageDis.textContent = "";
+    this.textContent = "New Colors";
     for (var i = 0; i < squares.length; i++) {
         //assign colors
         squares[i].style.backgroundColor = colors[i];
     }
-    h1.style.backgroundColor = "#232323";
-})
+    h1.style.backgroundColor = "steelblue";
+});
 
 colorDis.textContent = pick_color;
 
