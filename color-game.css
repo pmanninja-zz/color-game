@@ -19,6 +19,8 @@ h1 {
     color: seashell;
 }
 
-span {
-    color: seashell;
+#stripe {
+    background-color: seashell;
+    height: 30px;
+    text-align: center;
 }
